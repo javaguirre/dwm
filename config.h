@@ -54,6 +54,8 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockscreen[] = { "slock", NULL };
+static const char *screenshot[] = { "import", "-window", "root", "-delay",
+                                    "200", "/home/javaguirre/screenshot.png"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -81,6 +83,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          {.v = lockscreen } },
+	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = screenshot } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
