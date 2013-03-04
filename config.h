@@ -55,7 +55,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockscreen[] = { "slock", NULL };
 static const char *screenshot[] = { "import", "-window", "root", "-delay",
-                                    "200", "/home/javaguirre/screenshot.png"};
+                                    "200", "/home/javaguirre/screenshot.png", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
