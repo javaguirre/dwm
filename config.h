@@ -53,14 +53,20 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *termlightcmd[]  = { "st-light", NULL };
 static const char *lockscreen[] = { "slock", NULL };
 static const char *screenshot[] = { "import", "-window", "root", "-delay",
                                     "200", "/home/javaguirre/screenshot.png", NULL};
+static const char *browsercmd[]  = { "firefox", NULL };
+static const char *pavucmd[]  = { "pavucontrol", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termlightcmd } },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pavucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
