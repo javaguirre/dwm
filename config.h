@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-terminus3-medium-r-*-*-16-*-*-*-*-*-*-*";
+static const char font[]            = "-*-nimbus mono-medium-r-*-*-16-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -25,6 +25,7 @@ static const Rule rules[] = {
 	{ "Skype",    NULL,       NULL,       0,            True,        -1 },
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       0,            False,       -1 },
+	{ "lighthouse",  NULL,    NULL,       0,            True,       -1 },
 };
 
 /* layout(s) */
@@ -40,7 +41,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -55,8 +56,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "st", NULL };
 static const char *termlightcmd[]  = { "st-light", NULL };
 static const char *lockscreen[] = { "slock", NULL };
-static const char *screenshot[] = { "import", "-window", "root", "-delay",
-                                    "200", "/home/javaguirre/screenshot.png", NULL};
+static const char *screenshot[] = { "maim", "-s", NULL};
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *pavucmd[]  = { "pavucontrol", NULL };
 
